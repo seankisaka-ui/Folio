@@ -1,0 +1,18 @@
+<!-- @dsCard group="Content" height=160 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tooltip — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{paddingTop:48,display:'flex',gap:48}},
+  h(F.Tooltip,{text:'Pass mark is 80%',open:true},h(F.Button,{variant:'outline',iconLeft:'info'},'Pass mark')),
+  h(F.Tooltip,{text:'More actions',open:true},h(F.IconButton,{icon:'ellipsis',label:'More actions',variant:'outline'}))
+));
+</script>
+</body>
+</html>

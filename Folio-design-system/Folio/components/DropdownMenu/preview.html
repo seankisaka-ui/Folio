@@ -1,0 +1,15 @@
+<!-- @dsCard group="Content" height=340 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DropdownMenu — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{minHeight:300}},h(F.DropdownMenu,{open:true,label:'PACE actions',items:[{label:'Log progress',icon:'notebook-pen'},{label:'Record test score',icon:'clipboard-check'},{label:'View history',icon:'history'},'separator',{label:'Change PACE number',icon:'pencil'},{label:'Remove subject',icon:'trash-2',danger:true}]})));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Content" height=380 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Alert — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-stack'},
+  h(F.Alert,{tone:'info',title:'Two PACE tests are ready',onDismiss:function(){}},'Sarah (Mathematics) and Daniel (English) finished their Self Tests.'),
+  h(F.Alert,{tone:'success',title:'Score saved'},'Sarah passed Science PACE 1047 with 92%.'),
+  h(F.Alert,{tone:'warning',title:'Below the pass mark',actions:[h(F.Button,{key:1,size:'sm',variant:'outline'},'Plan a repeat')]},'Sarah scored 76% on English PACE 1046. The pass mark is 80%.'),
+  h(F.Alert,{tone:'error',title:'Couldn\'t save the score',actions:[h(F.Button,{key:1,size:'sm',variant:'outline',iconLeft:'refresh-cw'},'Try again')]},'Check your connection. Your entry is kept on this device.')
+));
+</script>
+</body>
+</html>

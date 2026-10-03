@@ -1,0 +1,33 @@
+<!-- @dsCard group="Desktop examples" height=900 page width=1280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Household dashboard — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function Shell(cur, header, body){return h('div',{className:'fo-shell',style:{minHeight:860}},h(F.Sidebar,{current:cur,counts:{scores:2}}),h('main',{className:'fo-shell__main'},h('div',{className:'fo-shell__header'},header),h('div',{className:'fo-shell__content'},body)))}
+function Top(){return [h('div',{key:1,style:{flex:1,maxWidth:420}},h(F.SearchField,{placeholder:'Search children, subjects or PACEs'})),h('div',{key:2,style:{marginLeft:'auto',display:'flex',gap:8}},h(F.IconButton,{icon:'bell',label:'Notifications (1 unread)'}),h(F.Button,{variant:'secondary',iconLeft:'sparkles'},'Assistant'))]}
+
+R(Shell('home', Top(), [
+  h(F.PageHeader,{key:'h',display:true,title:'Good morning, Ruth',subtitle:'Saturday, 3 October · 3 children · 2 PACE tests ready',actions:h(F.Button,{iconLeft:'notebook-pen'},'Log progress')}),
+  h('div',{key:'s',className:'fo-grid fo-grid--4'},h(F.StatTile,{label:'PACE tests ready',value:'2',note:'Sarah · Maths, Daniel · English',icon:'clipboard-check'}),h(F.StatTile,{label:'Completed this term',value:'14',note:'PACEs across 3 children',icon:'circle-check'}),h(F.StatTile,{label:'Last progress logged',value:'Today',note:'10:42 AM by Ruth',icon:'clock'})),
+  h('h2',{key:'t',className:'fo-h fo-h-2'},'Children'),
+  h('div',{key:'g',className:'fo-grid'},
+    h(F.ChildSummaryCard,{name:'Grace Mukasa',meta:'Age 13 · Level 7',paces:[{subject:'Mathematics',pace:1078},{subject:'English',pace:1075},{subject:'Science',pace:1076}],updated:'Updated yesterday',status:h(F.Badge,{tone:'neutral',icon:'clock'},'No log today')}),
+    h(F.ChildSummaryCard,{name:'Sarah Mukasa',meta:'Age 10 · Level 4',paces:[{subject:'Mathematics',pace:1048},{subject:'English',pace:1046},{subject:'Science',pace:1047}],updated:'Progress updated today',status:h(F.Badge,{tone:'warning',icon:'clipboard-check'},'1 test ready')}),
+    h(F.ChildSummaryCard,{name:'Daniel Mukasa',meta:'Age 8 · Level 2',paces:[{subject:'Mathematics',pace:1022},{subject:'English',pace:1021},{subject:'Science',pace:1019}],updated:'Progress updated today',status:h(F.Badge,{tone:'warning',icon:'clipboard-check'},'1 test ready')})),
+  h('div',{key:'b',className:'fo-split'},
+    h(F.Card,{title:'Needs attention'},h('div',null,
+      h(F.RecordRow,{avatar:'Sarah Mukasa',title:'Record Sarah\'s Mathematics test',meta:'PACE 1048 · Self Test passed 1 Oct',badge:h(F.StatusBadge,{status:'ready-for-test'})}),
+      h(F.RecordRow,{avatar:'Daniel Mukasa',title:'Record Daniel\'s English test',meta:'PACE 1021 · Self Test passed today',badge:h(F.StatusBadge,{status:'ready-for-test'})}))),
+    h(F.Card,{title:'Recent activity'},h('div',null,
+      h(F.ActivityItem,{icon:'circle-check',tone:'success',text:'Sarah passed Science PACE 1047 with 92%',time:'Today',ai:'edited'}),
+      h(F.ActivityItem,{icon:'notebook-pen',text:'Daniel completed pages 10–16 in English',time:'Today'}))))
+]));
+</script>
+</body>
+</html>

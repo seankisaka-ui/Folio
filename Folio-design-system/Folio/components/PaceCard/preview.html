@@ -1,0 +1,19 @@
+<!-- @dsCard group="Content" height=480 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>PaceCard — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'280px'}},
+  S('Card / PACE / In progress',h(F.PaceCard,{subject:'Mathematics',pace:1048,nextPace:1049,pagesDone:18,pagesTotal:36,stage:0,status:'in-progress',updated:'Progress updated today'})),
+  S('Card / PACE / Ready for test',h(F.PaceCard,{subject:'English',pace:1046,nextPace:1047,pagesDone:34,pagesTotal:34,stage:3,status:'ready-for-test',updated:'Self Test passed 1 Oct'})),
+  S('Card / PACE / Passed',h(F.PaceCard,{subject:'Science',pace:1047,nextPace:1048,stage:4,status:'passed',score:92,updated:'Tested 28 Sep 2026'}))
+));
+</script>
+</body>
+</html>

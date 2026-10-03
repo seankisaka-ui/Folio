@@ -1,0 +1,21 @@
+<!-- @dsCard group="Content" height=260 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScoreDisplay — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'260px'}},
+  S('Score / Passed',h(F.ScoreDisplay,{score:92,date:'28 Sep 2026'})),
+  S('Score / Below pass mark',h(F.ScoreDisplay,{score:76,date:'1 Oct 2026'})),
+  S('Score / Pending',h(F.ScoreDisplay,{score:null})),
+  S('Score / Medium',h(F.ScoreDisplay,{score:88,size:'md'})),
+  S('Score / Small',h(F.ScoreDisplay,{score:95,size:'sm'}))
+));
+</script>
+</body>
+</html>

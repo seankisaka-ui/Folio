@@ -1,0 +1,21 @@
+<!-- @dsCard group="Content" height=420 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SubjectCard — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'260px'}},
+  S('Card / Subject / Active',h(F.SubjectCard,{subject:'Mathematics',pace:1048,progress:50,pagesDone:18,pagesTotal:36,status:'in-progress',updated:'Updated today',onClick:function(){}})),
+  S('Card / Subject / Ready for test',h(F.SubjectCard,{subject:'English',pace:1046,progress:100,pagesDone:34,pagesTotal:34,status:'ready-for-test',updated:'Self Test passed 1 Oct'})),
+  S('Card / Subject / Complete',h(F.SubjectCard,{subject:'Science',pace:1047,progress:100,pagesDone:32,pagesTotal:32,status:'passed',updated:'Test 92% · 28 Sep'})),
+  S('Card / Subject / Not started',h(F.SubjectCard,{subject:'Social Studies',pace:null,status:'not-started'})),
+  S('Card / Subject / Selected',h(F.SubjectCard,{subject:'Word Building',pace:1045,progress:20,pagesDone:7,pagesTotal:34,status:'in-progress',selected:true,onClick:function(){}}))
+));
+</script>
+</body>
+</html>

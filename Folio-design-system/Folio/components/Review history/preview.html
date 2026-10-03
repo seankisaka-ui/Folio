@@ -1,0 +1,21 @@
+<!-- @dsCard group="Patterns" height=560 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Review history — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h(F.Card,{title:'Sarah\'s academic history'},
+  h('div',{className:'fo-row'},h('div',{style:{width:200}},h(F.Select,{'aria-label':'Subject',options:['All subjects','Mathematics','English','Science'],defaultValue:'Mathematics'})),h('div',{style:{width:200}},h(F.Select,{'aria-label':'Term',options:['Term 3 2026','Term 2 2026'],defaultValue:'Term 3 2026'}))),
+  h(F.Timeline,null,
+    h(F.HistoryEntry,{kind:'current',title:'Mathematics PACE 1048',meta:'Started 29 Sep 2026 · 18 of 36 pages',badge:h(F.StatusBadge,{status:'in-progress'})}),
+    h(F.HistoryEntry,{kind:'complete',title:'Mathematics PACE 1047 · 92%',meta:'Passed 28 Sep 2026 · recorded by Ruth',badge:h(F.AiTag,null)}),
+    h(F.HistoryEntry,{kind:'warning',title:'Mathematics PACE 1046 · 76% → 88%',meta:'Repeated; passed on retest 12 Sep 2026'}))
+));
+</script>
+</body>
+</html>

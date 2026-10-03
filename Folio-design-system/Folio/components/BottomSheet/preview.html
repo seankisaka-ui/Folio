@@ -1,0 +1,19 @@
+<!-- @dsCard group="Overlays" height=640 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>BottomSheet — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-phone'},h(F.MobileTopBar,{title:'Sarah',onBack:function(){}}),h('div',{className:'fo-phone__scroll'}),
+  h(F.BottomSheet,{inline:true,title:'Record test score',onClose:function(){},footer:[h(F.Button,{key:1,size:'lg',block:true,iconLeft:'check'},'Save score'),h(F.Button,{key:2,size:'lg',block:true,variant:'ghost'},'Cancel')]},
+    h(F.ReadOnlyField,{label:'PACE',value:'Mathematics · 1048'}),
+    h(F.Field,{label:'PACE test score',success:'Passed (pass mark 80%)'},h(F.ScoreInput,{defaultValue:'92'})),
+    h(F.Field,{label:'Test date'},h(F.DateInput,{defaultValue:'2026-10-03'})))));
+</script>
+</body>
+</html>

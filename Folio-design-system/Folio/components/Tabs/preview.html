@@ -1,0 +1,18 @@
+<!-- @dsCard group="Content" height=260 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tabs — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-stack'},
+  h(F.Tabs,{label:'Sarah',tabs:[{id:'c',label:'Current PACEs',count:5,content:h('p',{style:{margin:0}},'Five subjects in progress.')},{id:'s',label:'Test scores',content:'…'},{id:'h',label:'History',content:'…'},{id:'r',label:'Reports',disabled:true,content:'…'}]}),
+  h('div',{className:'fo-tabs__list',role:'presentation'},h('span',{className:'fo-tab is-hover'},'Tabs / Hover'),h('span',{className:'fo-tab is-focus'},'Tabs / Focus'),h('span',{className:'fo-tab','aria-selected':'true'},'Tabs / Selected'))
+));
+</script>
+</body>
+</html>

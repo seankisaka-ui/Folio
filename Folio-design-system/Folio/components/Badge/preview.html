@@ -1,0 +1,17 @@
+<!-- @dsCard group="Content" height=200 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Badge — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(G(null,160,
+  S('Badge / Neutral',h(F.Badge,{tone:'neutral'},'Not started')),S('Badge / Progress',h(F.Badge,{tone:'progress'},'In progress')),S('Badge / Success',h(F.Badge,{tone:'success'},'Passed')),
+  S('Badge / Warning',h(F.Badge,{tone:'warning'},'Ready for test')),S('Badge / Error',h(F.Badge,{tone:'error'},'Below pass mark')),S('Badge / Accent',h(F.Badge,{tone:'accent'},'Current')),S('Badge / AI',h(F.Badge,{tone:'ai'},'AI-assisted'))));
+</script>
+</body>
+</html>

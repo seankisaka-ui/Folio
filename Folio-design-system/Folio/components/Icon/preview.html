@@ -1,0 +1,19 @@
+<!-- @dsCard group="Foundations" height=420 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Icon — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var names = F.Icon.names;
+R(h(React.Fragment,null,
+  G('Sizes',140, S('icon-sm · 16', h(F.Icon,{name:'book-open',size:16})), S('icon-md · 20', h(F.Icon,{name:'book-open',size:20})), S('icon-lg · 24', h(F.Icon,{name:'book-open',size:24})), S('icon-xl · 32', h(F.Icon,{name:'book-open',size:32}))),
+  G('Inventory ('+names.length+')',120, names.map(function(n){return S(n, h(F.Icon,{name:n,size:24}))}))
+));
+</script>
+</body>
+</html>

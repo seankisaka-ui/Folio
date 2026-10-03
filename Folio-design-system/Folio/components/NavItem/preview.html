@@ -1,0 +1,23 @@
+<!-- @dsCard group="Navigation" height=420 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>NavItem — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function N(n,p){return h('div',{className:'fo-demo__cell'},h('span',{className:'fo-demo__name',style:{color:'var(--sidebar-heading)'}},'Navigation / Sidebar Item / '+n),h('ul',{style:{listStyle:'none',margin:0,padding:0,width:232}},h(F.NavItem,p)))}
+R(h('div',{className:'fo-demo--dark',style:{padding:24,borderRadius:12,display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:20}},
+  N('Default',{icon:'users',label:'Children'}),
+  h('div',{className:'fo-demo__cell'},h('span',{className:'fo-demo__name',style:{color:'var(--sidebar-heading)'}},'Navigation / Sidebar Item / Hover'),h('ul',{style:{listStyle:'none',margin:0,padding:0,width:232}},h('li',null,h('a',{href:'#',className:'fo-navitem is-hover'},h(F.Icon,{name:'notebook-pen',size:22}),h('span',null,'Log progress'))))),
+  h('div',{className:'fo-demo__cell'},h('span',{className:'fo-demo__name',style:{color:'var(--sidebar-heading)'}},'Navigation / Sidebar Item / Focus'),h('ul',{style:{listStyle:'none',margin:0,padding:0,width:232}},h('li',null,h('a',{href:'#',className:'fo-navitem is-focus'},h(F.Icon,{name:'file-text',size:22}),h('span',null,'Reports'))))),
+  N('Selected',{icon:'house',label:'Home',current:true}),
+  N('With count',{icon:'clipboard-check',label:'Test scores',count:2}),
+  N('Disabled',{icon:'file-text',label:'Reports',disabled:true})
+));
+</script>
+</body>
+</html>

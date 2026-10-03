@@ -1,0 +1,21 @@
+<!-- @dsCard group="AI Assistant" height=820 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>AiActionPreview — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var f=[{key:'child',label:'Child',value:'Sarah Mukasa'},{key:'subject',label:'Subject',value:'Mathematics',options:['Mathematics','English','Science']},{key:'pace',label:'PACE',value:'1048'},{key:'score',label:'Test score',value:'92',display:'92% · Passed',type:'score'},{key:'date',label:'Date',value:'2026-10-03',display:'3 Oct 2026',type:'date'}];
+var f2=f.map(function(x){return x.key==='score'?Object.assign({},x,{value:'94',display:'94% · Passed',changed:true}):x});
+R(h('div',{className:'fo-stack',style:{gap:24}},
+  S('AI / Action Preview / Review',h(F.AiActionPreview,{quote:'Sarah scored 92 on math 1048 today',fields:f})),
+  S('AI / Action Preview / Editing',h(F.AiActionPreview,{quote:'Sarah scored 92 on math 1048 today',fields:f,state:'editing'})),
+  S('AI / Action Preview / Saved',h(F.AiActionPreview,{fields:f2,state:'saved'}))
+));
+</script>
+</body>
+</html>

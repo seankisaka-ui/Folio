@@ -1,0 +1,20 @@
+<!-- @dsCard group="Forms" height=220 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Switch — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'260px'}},
+  S('Switch / Off', h(F.Switch,{label:'Weekly email summary'})),
+  S('Switch / On', h(F.Switch,{label:'Remind me to log progress',defaultChecked:true})),
+  S('Switch / Focus', h('span',{className:'fo-switch is-focus',style:{display:'inline-flex'}},h(F.Switch,{label:'Large text',defaultChecked:true}))),
+  S('Switch / Disabled', h(F.Switch,{label:'AI assistant',disabled:true}))
+));
+</script>
+</body>
+</html>

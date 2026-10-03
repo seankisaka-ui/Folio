@@ -1,0 +1,30 @@
+<!-- @dsCard group="Desktop examples" height=820 page width=1280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Progress entry form — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function Shell(cur, header, body){return h('div',{className:'fo-shell',style:{minHeight:860}},h(F.Sidebar,{current:cur,counts:{scores:2}}),h('main',{className:'fo-shell__main'},h('div',{className:'fo-shell__header'},header),h('div',{className:'fo-shell__content'},body)))}
+function Top(){return [h('div',{key:1,style:{flex:1,maxWidth:420}},h(F.SearchField,{placeholder:'Search children, subjects or PACEs'})),h('div',{key:2,style:{marginLeft:'auto',display:'flex',gap:8}},h(F.IconButton,{icon:'bell',label:'Notifications (1 unread)'}),h(F.Button,{variant:'secondary',iconLeft:'sparkles'},'Assistant'))]}
+
+R(Shell('progress', Top(), [
+  h(F.PageHeader,{key:'h',title:'Log progress',subtitle:'Record pages or a completed stage for one PACE.'}),
+  h('div',{key:'b',className:'fo-split'},
+    h(F.Card,null,
+      h(F.FieldGroup,{columns:2},h(F.Field,{label:'Child'},h(F.Select,{options:['Sarah Mukasa','Daniel Mukasa','Grace Mukasa']})),h(F.Field,{label:'Subject'},h(F.Select,{options:['Mathematics','English','Science']}))),
+      h(F.ReadOnlyField,{label:'Current PACE',value:'PACE 1048 · 18 of 36 pages done'}),
+      h(F.RadioGroup,{legend:'What was completed?',name:'w',horizontal:true,defaultValue:'p',options:[{value:'p',label:'Pages'},{value:'c',label:'A Checkup'},{value:'s',label:'Self Test'}]}),
+      h(F.FieldGroup,{columns:2},h(F.Field,{label:'From page'},h(F.NumberInput,{defaultValue:'19'})),h(F.Field,{label:'To page',error:'“To page” must be 36 or less.'},h(F.NumberInput,{defaultValue:'40'}))),
+      h(F.Field,{label:'Date'},h(F.DateInput,{defaultValue:'2026-10-03'})),
+      h(F.Field,{label:'Notes',optional:true},h(F.TextArea,{placeholder:'Anything to remember'})),
+      h('div',{className:'fo-card__foot'},h(F.Button,{variant:'ghost'},'Cancel'),h(F.Button,{iconLeft:'check'},'Save progress'))),
+    h(F.PaceCard,{subject:'Mathematics',pace:1048,nextPace:1049,pagesDone:18,pagesTotal:36,stage:0,status:'in-progress',updated:'Last logged 2 Oct'}))
+]));
+</script>
+</body>
+</html>

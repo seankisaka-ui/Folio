@@ -1,0 +1,16 @@
+<!-- @dsCard group="Content" height=460 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Table — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var rows=[{id:1,subject:'Mathematics',pace:'1047',date:'28 Sep 2026',score:'92%',st:'passed'},{id:2,subject:'English',pace:'1046',date:'1 Oct 2026',score:'76%',st:'needs-review'},{id:3,subject:'Science',pace:'1046',date:'15 Sep 2026',score:'88%',st:'passed'},{id:4,subject:'Word Building',pace:'1044',date:'10 Sep 2026',score:'95%',st:'passed'}];
+R(h(F.Table,{caption:'Sarah\'s PACE test scores',sort:{key:'date',dir:'desc'},columns:[{key:'subject',label:'Subject'},{key:'pace',label:'PACE',numeric:true},{key:'date',label:'Test date',sortable:true},{key:'score',label:'Score',numeric:true},{key:'st',label:'Result',render:function(r){return h(F.StatusBadge,{status:r.st})}}],rows:rows}));
+</script>
+</body>
+</html>

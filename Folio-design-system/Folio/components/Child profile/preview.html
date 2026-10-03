@@ -1,0 +1,25 @@
+<!-- @dsCard group="Desktop examples" height=980 page width=1280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Child profile — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function Shell(cur, header, body){return h('div',{className:'fo-shell',style:{minHeight:860}},h(F.Sidebar,{current:cur,counts:{scores:2}}),h('main',{className:'fo-shell__main'},h('div',{className:'fo-shell__header'},header),h('div',{className:'fo-shell__content'},body)))}
+function Top(){return [h('div',{key:1,style:{flex:1,maxWidth:420}},h(F.SearchField,{placeholder:'Search children, subjects or PACEs'})),h('div',{key:2,style:{marginLeft:'auto',display:'flex',gap:8}},h(F.IconButton,{icon:'bell',label:'Notifications (1 unread)'}),h(F.Button,{variant:'secondary',iconLeft:'sparkles'},'Assistant'))]}
+
+var kids=[{id:'g',name:'Grace Mukasa',meta:'Age 13 · Level 7'},{id:'s',name:'Sarah Mukasa',meta:'Age 10 · Level 4'},{id:'d',name:'Daniel Mukasa',meta:'Age 8 · Level 2'}];
+R(Shell('children', [h(F.Breadcrumbs,{key:1,items:[{label:'Children'},{label:'Sarah Mukasa'}]}),h('div',{key:2,style:{marginLeft:'auto'}},h(F.ChildSwitcher,{options:kids,value:'s'}))], [
+  h('div',{key:'h',className:'fo-row',style:{gap:20,paddingTop:8}},h(F.Avatar,{name:'Sarah Mukasa',size:'lg'}),h('div',{style:{flex:1}},h('h1',{className:'fo-h fo-h-1'},'Sarah Mukasa'),h('p',{style:{margin:'4px 0 0',color:'var(--text-secondary)'}},'Age 10 · Level 4 · 5 subjects · Progress updated today')),h(F.Button,{variant:'outline',iconLeft:'file-text'},'Report'),h(F.Button,{iconLeft:'notebook-pen'},'Log progress')),
+  h(F.Tabs,{key:'t',label:'Sarah',tabs:[{id:'c',label:'Current PACEs',count:5,content:h('div',{className:'fo-grid'},
+    h(F.PaceCard,{subject:'Mathematics',pace:1048,nextPace:1049,pagesDone:34,pagesTotal:36,stage:3,status:'ready-for-test',updated:'Self Test passed 1 Oct'}),
+    h(F.PaceCard,{subject:'English',pace:1046,nextPace:1047,pagesDone:18,pagesTotal:34,stage:1,status:'in-progress',updated:'Progress updated today'}),
+    h(F.PaceCard,{subject:'Science',pace:1047,nextPace:1048,stage:4,status:'passed',score:92,updated:'Tested 28 Sep 2026'}))},{id:'s',label:'Test scores',content:'…'},{id:'h',label:'History',content:'…'}]})
+]));
+</script>
+</body>
+</html>

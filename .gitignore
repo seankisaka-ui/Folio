@@ -1,0 +1,12 @@
+node_modules/
+.next/
+coverage/
+data/*.db
+data/*.db-*
+.env
+.env.local
+*.log
+*.tsbuildinfo
+Folio-design-system.zip
+Atkinson_Hyperlegible_Next/
+Bricolage_Grotesque/

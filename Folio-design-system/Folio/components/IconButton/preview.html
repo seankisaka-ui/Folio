@@ -1,0 +1,24 @@
+<!-- @dsCard group="Actions" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>IconButton — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h(React.Fragment,null,
+  G('Variants',150,
+    S('IconButton / Ghost / Default', h(F.IconButton,{icon:'ellipsis',label:'More actions'})),
+    S('IconButton / Ghost / Hover', h(F.IconButton,{icon:'ellipsis',label:'More actions',style:{background:'var(--button-outline-bg-hover)'}})),
+    S('IconButton / Ghost / Focus', h(F.IconButton,{icon:'ellipsis',label:'More actions',className:'is-focus'})),
+    S('IconButton / Outline / Default', h(F.IconButton,{icon:'pencil',label:'Edit score',variant:'outline'})),
+    S('IconButton / Primary / Default', h(F.IconButton,{icon:'plus',label:'Add child',variant:'primary'})),
+    S('IconButton / Ghost / Disabled', h(F.IconButton,{icon:'trash-2',label:'Delete record',disabled:true}))),
+  h('div',{style:{paddingTop:40}}, G('With tooltip (hover or focus)',200, S('IconButton / Ghost / Tooltip', h(F.IconButton,{icon:'x',label:'Close',showTooltip:true}))))
+));
+</script>
+</body>
+</html>

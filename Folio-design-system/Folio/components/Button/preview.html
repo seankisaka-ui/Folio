@@ -1,0 +1,32 @@
+<!-- @dsCard group="Actions" height=640 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Button — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var V=['primary','secondary','outline','ghost','link','destructive'];
+var L={primary:'Save score',secondary:'Log progress',outline:'Cancel',ghost:'View history',link:'See all PACEs',destructive:'Remove child'};
+function cap(s){return s[0].toUpperCase()+s.slice(1)}
+R(h(React.Fragment,null,
+  V.map(function(v){return G(cap(v),128,
+    S('Button / '+cap(v)+' / Default', h(F.Button,{variant:v},L[v])),
+    S('Button / '+cap(v)+' / Hover', h(F.Button,{variant:v,className:'is-hover'},L[v])),
+    S('Button / '+cap(v)+' / Focus', h(F.Button,{variant:v,className:'is-focus'},L[v])),
+    S('Button / '+cap(v)+' / Pressed', h(F.Button,{variant:v,pressed:true},L[v])),
+    S('Button / '+cap(v)+' / Loading', h(F.Button,{variant:v,loading:true,loadingText:'Saving…'},L[v])),
+    S('Button / '+cap(v)+' / Disabled', h(F.Button,{variant:v,disabled:true},L[v])))}),
+  G('Sizes and icons',260,
+    S('Button / Primary / Small', h(F.Button,{size:'sm'},'Save')),
+    S('Button / Primary / Standard', h(F.Button,{iconLeft:'plus'},'Add child')),
+    S('Button / Primary / Large', h(F.Button,{size:'lg',iconRight:'arrow-right'},'Advance to PACE 1049')),
+    S('Button / Secondary / Icon left', h(F.Button,{variant:'secondary',iconLeft:'notebook-pen'},'Log progress')),
+    S('Button / Outline / Icon right', h(F.Button,{variant:'outline',iconRight:'chevron-down'},'All subjects')))
+));
+</script>
+</body>
+</html>

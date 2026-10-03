@@ -1,0 +1,22 @@
+<!-- @dsCard group="Content" height=320 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>InteractiveCard — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function B(t){return h('div',{className:'fo-stack',style:{width:'100%',gap:4}},h('strong',null,'Mathematics'),h('span',{className:'fo-text-sm fo-text-muted'},'PACE 1048 · '+t))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'220px'}},
+  S('Card / Interactive / Default', h(F.InteractiveCard,{onClick:function(){}},B('Default'))),
+  S('Card / Interactive / Hover', h(F.InteractiveCard,{className:'is-hover'},B('Hover'))),
+  S('Card / Interactive / Focus', h(F.InteractiveCard,{className:'is-focus'},B('Focus'))),
+  S('Card / Interactive / Selected', h(F.InteractiveCard,{selected:true},B('Selected'))),
+  S('Card / Interactive / Disabled', h(F.InteractiveCard,{disabled:true},B('Not assigned')))
+));
+</script>
+</body>
+</html>

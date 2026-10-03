@@ -1,0 +1,27 @@
+<!-- @dsCard group="Patterns" height=720 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Generate a report — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-split',style:{gridTemplateColumns:'minmax(0,1fr) minmax(0,1.6fr)'}},
+  h(F.Card,{title:'Report options'},
+    h(F.Field,{label:'Child'},h(F.Select,{options:['Sarah Mukasa','Daniel Mukasa','Grace Mukasa']})),
+    h(F.Field,{label:'Period'},h(F.Select,{options:['Term 3 2026','Term 2 2026','Whole year 2026']})),
+    h('fieldset',{className:'fo-fieldset'},h('legend',null,'Include'),h(F.Checkbox,{label:'Completed PACEs and scores',defaultChecked:true}),h(F.Checkbox,{label:'Current PACEs',defaultChecked:true}),h(F.Checkbox,{label:'Supervisor notes'})),
+    h('div',{className:'fo-row'},h(F.Button,{iconLeft:'download'},'Download PDF'),h(F.Button,{variant:'outline',iconLeft:'printer'},'Print'))),
+  h(F.Card,{'aria-label':'Report preview',style:{padding:40}},
+    h('p',{className:'fo-overline',style:{margin:0}},'Progress report · Term 3 2026'),
+    h('h2',{className:'fo-h fo-h-1'},'Sarah Mukasa'),
+    h('p',{style:{margin:0,color:'var(--text-secondary)'}},'Age 10 · Level 4 · Supervisor: Ruth Mukasa'),
+    h(F.Table,{stackOnMobile:false,columns:[{key:'s',label:'Subject'},{key:'p',label:'PACEs completed'},{key:'a',label:'Average score',numeric:true}],rows:[{id:1,s:'Mathematics',p:'1045–1047',a:'92%'},{id:2,s:'English',p:'1043–1045',a:'88%'},{id:3,s:'Science',p:'1045–1046',a:'90%'}]}),
+    h('p',{className:'fo-text-sm fo-text-muted',style:{margin:0}},'Generated 3 Oct 2026 · Folio'))
+));
+</script>
+</body>
+</html>

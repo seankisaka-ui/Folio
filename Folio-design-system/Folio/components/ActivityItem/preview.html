@@ -1,0 +1,19 @@
+<!-- @dsCard group="Content" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ActivityItem — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h(F.Card,{title:'Recent activity',flush:false},h('div',null,
+  h(F.ActivityItem,{icon:'circle-check',tone:'success',text:'Sarah passed Science PACE 1047 with 92%',time:'Today, 10:42 AM',meta:'by Ruth',ai:'edited'}),
+  h(F.ActivityItem,{icon:'notebook-pen',text:'Daniel completed pages 10–16 in English PACE 1021',time:'Today, 9:15 AM',meta:'by Ruth'}),
+  h(F.ActivityItem,{icon:'arrow-right',text:'Grace advanced to Mathematics PACE 1079',time:'Yesterday',meta:'by Ruth'})
+)));
+</script>
+</body>
+</html>

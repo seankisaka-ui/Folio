@@ -1,0 +1,18 @@
+<!-- @dsCard group="Forms" height=420 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>RadioGroup — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'300px'}},
+  S('Radio / List', h(F.RadioGroup,{legend:'Which test is this?',name:'t',defaultValue:'pace',options:[{value:'checkup',label:'Checkup'},{value:'self',label:'Self Test'},{value:'pace',label:'PACE Test'},{value:'x',label:'Final review',disabled:true}]})),
+  S('Radio / Card', h(F.RadioGroup,{legend:'Score is below the pass mark. What next?',name:'n',card:true,defaultValue:'repeat',options:[{value:'repeat',label:'Repeat PACE 1048',description:'Sarah works through the PACE again before retesting.'},{value:'retest',label:'Retest after review',description:'Review missed sections, then take the test again.'}]}))
+));
+</script>
+</body>
+</html>

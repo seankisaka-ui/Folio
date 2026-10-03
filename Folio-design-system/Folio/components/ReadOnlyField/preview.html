@@ -1,0 +1,19 @@
+<!-- @dsCard group="Forms" height=240 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ReadOnlyField — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'220px'}},
+  S('Editable (TextInput)', h(F.Field,{label:'PACE test score'},h(F.ScoreInput,{defaultValue:'92'}))),
+  S('Input / Read-only', h(F.ReadOnlyField,{label:'PACE test score',value:'92% · 28 Sep 2026'})),
+  S('Input / Read-only / Context', h(F.ReadOnlyField,{label:'Child',value:'Sarah Mukasa'}))
+));
+</script>
+</body>
+</html>

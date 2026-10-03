@@ -1,0 +1,27 @@
+<!-- @dsCard group="Mobile examples" height=800 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Mobile child overview — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function Phone(cls){return h('div',{className:'fo-phone '+(cls||'')},
+  h(F.MobileTopBar,{title:'Sarah',onBack:function(){},action:h(F.IconButton,{icon:'ellipsis',label:'More actions'})}),
+  h('div',{className:'fo-phone__scroll'},
+    h('div',{className:'fo-row',style:{gap:12}},h(F.Avatar,{name:'Sarah Mukasa',size:'lg'}),h('div',null,h('h1',{className:'fo-h fo-h-1'},'Sarah'),h('p',{className:'fo-text-sm fo-text-muted',style:{margin:0}},'Age 10 · Level 4'))),
+    h(F.Alert,{tone:'warning',title:'Maths test ready'},'Self Test passed 1 Oct.'),
+    h(F.Button,{size:'lg',block:true,iconLeft:'notebook-pen'},'Log progress'),
+    h('h2',{className:'fo-h fo-h-2'},'Current PACEs'),
+    h('div',{style:{borderRadius:12,overflow:'hidden',border:'1px solid var(--border-subtle)'}},
+      h(F.RecordRow,{title:'Mathematics',meta:'PACE 1048 · 34 of 36 pages',badge:h(F.StatusBadge,{status:'ready-for-test'},'Test')}),
+      h(F.RecordRow,{title:'English',meta:'PACE 1046 · 18 of 34 pages'}),
+      h(F.RecordRow,{title:'Science',meta:'PACE 1047 · 92%',badge:h(F.StatusBadge,{status:'passed'})}))),
+  h(F.BottomNav,{current:'children'}))}
+R(h('div',{style:{display:'flex',gap:32,alignItems:'flex-start',flexWrap:'wrap'}},Phone(),Phone('fo-phone--320')));
+</script>
+</body>
+</html>

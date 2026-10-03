@@ -1,0 +1,18 @@
+<!-- @dsCard group="Overlays" height=520 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ConfirmDialog — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(380px,1fr))',gap:24}},
+  h('div',{style:{height:480}},h(F.ConfirmDialog,{inline:true,title:'Save this test score?',description:'This adds the score to Sarah\'s permanent record.',summary:[['Child','Sarah Mukasa'],['Subject','Mathematics'],['PACE','1048'],['Test score','92% · Passed'],['Date','3 Oct 2026']],confirmLabel:'Save score'})),
+  h('div',{style:{height:480}},h(F.ConfirmDialog,{inline:true,tone:'danger',title:'Remove Social Studies?',description:'Daniel\'s Social Studies history stays in the permanent record, but the subject will no longer appear on his dashboard.',confirmLabel:'Remove subject'}))
+));
+</script>
+</body>
+</html>

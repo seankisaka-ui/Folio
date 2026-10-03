@@ -1,0 +1,37 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Folio — cover</title>
+<style>
+  html,body{margin:0;background:var(--bg-canvas);}
+  .cover{position:relative;width:960px;height:300px;overflow:hidden;background:var(--bg-canvas);}
+  .cover svg{position:absolute;inset:0;}
+  .smoky{fill:var(--neutral-950);} .near{fill:var(--neutral-900);} .green{fill:var(--accent);} .forest{fill:var(--forest-800);} .grey{fill:var(--neutral-400);} .dot{fill:var(--forest-500);}
+  .tile{rx:var(--radius-lg);}
+  .text{position:absolute;left:48px;bottom:40px;max-width:440px;}
+  .name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:120px;line-height:.92;letter-spacing:-0.03em;color:var(--text-primary);margin:0;}
+  .tag{font-family:"Atkinson Hyperlegible Next",sans-serif;font-size:14px;line-height:20px;color:var(--text-muted);margin:16px 0 0;}
+</style></head>
+<body>
+<div class="cover">
+  <!--
+    blocks: brand-green (accent) tall slab 136x252, forest-800 200x144, neutral-950 (smoky black) 168x152, neutral-900 (near black) 120x72, neutral-400 (grey green) 152x68 — sides are multiples of space-2 (8px)
+    arrangement: a staggered, overlapping stack like the palette board, the green slab and grey green bleeding off the bottom edge, all right of x=480
+    pattern: dot grid (precise, 4px/8px grid, comfortable modular UI) — "spacing on the 4px grid, mostly 8px steps", 40 dots at space-6 (24px) pitch in forest-500 over the forest block
+    scales: pitch space-6, every corner radius-lg (12px, the card radius)
+  -->
+  <svg width="960" height="300" viewBox="0 0 960 300" aria-hidden="true">
+    <rect class="smoky tile" x="520" y="24" width="168" height="152"/>
+    <rect class="near tile" x="496" y="200" width="120" height="72"/>
+    <rect class="green tile" x="640" y="56" width="136" height="260"/>
+    <rect class="forest tile" x="728" y="104" width="200" height="144"/>
+    <circle class="dot" cx="744" cy="120" r="2.5"/><circle class="dot" cx="744" cy="144" r="2.5"/><circle class="dot" cx="744" cy="168" r="2.5"/><circle class="dot" cx="744" cy="192" r="2.5"/><circle class="dot" cx="744" cy="216" r="2.5"/><circle class="dot" cx="768" cy="120" r="2.5"/><circle class="dot" cx="768" cy="144" r="2.5"/><circle class="dot" cx="768" cy="168" r="2.5"/><circle class="dot" cx="768" cy="192" r="2.5"/><circle class="dot" cx="768" cy="216" r="2.5"/><circle class="dot" cx="792" cy="120" r="2.5"/><circle class="dot" cx="792" cy="144" r="2.5"/><circle class="dot" cx="792" cy="168" r="2.5"/><circle class="dot" cx="792" cy="192" r="2.5"/><circle class="dot" cx="792" cy="216" r="2.5"/><circle class="dot" cx="816" cy="120" r="2.5"/><circle class="dot" cx="816" cy="144" r="2.5"/><circle class="dot" cx="816" cy="168" r="2.5"/><circle class="dot" cx="816" cy="192" r="2.5"/><circle class="dot" cx="816" cy="216" r="2.5"/><circle class="dot" cx="840" cy="120" r="2.5"/><circle class="dot" cx="840" cy="144" r="2.5"/><circle class="dot" cx="840" cy="168" r="2.5"/><circle class="dot" cx="840" cy="192" r="2.5"/><circle class="dot" cx="840" cy="216" r="2.5"/><circle class="dot" cx="864" cy="120" r="2.5"/><circle class="dot" cx="864" cy="144" r="2.5"/><circle class="dot" cx="864" cy="168" r="2.5"/><circle class="dot" cx="864" cy="192" r="2.5"/><circle class="dot" cx="864" cy="216" r="2.5"/><circle class="dot" cx="888" cy="120" r="2.5"/><circle class="dot" cx="888" cy="144" r="2.5"/><circle class="dot" cx="888" cy="168" r="2.5"/><circle class="dot" cx="888" cy="192" r="2.5"/><circle class="dot" cx="888" cy="216" r="2.5"/><circle class="dot" cx="912" cy="120" r="2.5"/><circle class="dot" cx="912" cy="144" r="2.5"/><circle class="dot" cx="912" cy="168" r="2.5"/><circle class="dot" cx="912" cy="192" r="2.5"/><circle class="dot" cx="912" cy="216" r="2.5"/>
+    <rect class="grey tile" x="792" y="264" width="152" height="68"/>
+  </svg>
+  <div class="text">
+    <h1 class="name">Folio</h1>
+    <p class="tag">Calm, readable records for A.C.E. homeschool families.</p>
+  </div>
+</div>
+</body>
+</html>

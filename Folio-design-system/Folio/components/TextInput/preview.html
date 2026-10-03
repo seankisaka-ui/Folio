@@ -1,0 +1,26 @@
+<!-- @dsCard group="Forms" height=560 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>TextInput — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+function I(n,p,l){return S('Input / Text / '+n, h(F.Field,{label:l||'Child\'s first name',error:p.error,success:p.success},h(F.TextInput,p.input)))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'230px'}},
+  I('Default',{input:{placeholder:'e.g. Sarah'}}),
+  I('Hover',{input:{placeholder:'e.g. Sarah',className:'is-hover'}}),
+  I('Focus',{input:{defaultValue:'Sar',className:'is-focus'}}),
+  I('Filled',{input:{defaultValue:'Sarah'}}),
+  I('Error',{error:'Enter the child\'s first name.',input:{}}),
+  I('Success',{success:'Name available in this household.',input:{defaultValue:'Sarah'}}),
+  I('Disabled',{input:{defaultValue:'Sarah',disabled:true}}),
+  S('Input / Text / Read-only', h(F.ReadOnlyField,{label:'Child\'s first name',value:'Sarah'})),
+  S('Input / Text / With icon', h(F.Field,{label:'Email'},h(F.TextInput,{icon:'user',placeholder:'ruth@example.com',type:'email'})))
+));
+</script>
+</body>
+</html>

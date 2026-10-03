@@ -1,0 +1,20 @@
+<!-- @dsCard group="Feedback" height=360 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>StatusMessage — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'240px'}},
+  S('State / Success',h(F.Card,null,h(F.StatusMessage,{kind:'success',title:'Score saved',text:'Sarah is ready to start PACE 1049.'}))),
+  S('State / Error',h(F.Card,null,h(F.StatusMessage,{kind:'error',title:'Something went wrong',text:'Nothing was changed. Please try again.',actions:h(F.Button,{variant:'outline',iconLeft:'refresh-cw'},'Try again')}))),
+  S('State / Offline',h(F.Card,null,h(F.StatusMessage,{kind:'offline',title:'You\'re offline',text:'You can view saved records. New entries will sync later.'}))),
+  S('State / Loading',h(F.Card,null,h(F.StatusMessage,{kind:'loading',title:'Preparing report…'})))
+));
+</script>
+</body>
+</html>

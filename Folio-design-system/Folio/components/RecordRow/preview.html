@@ -1,0 +1,19 @@
+<!-- @dsCard group="Content" height=260 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>RecordRow — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{maxWidth:375,border:'1px solid var(--border-subtle)',borderRadius:12,overflow:'hidden'}},
+  h(F.RecordRow,{title:'Mathematics · PACE 1047',meta:'Test · 28 Sep 2026',value:'92%',badge:h(F.StatusBadge,{status:'passed'},'Passed')}),
+  h(F.RecordRow,{title:'English · PACE 1046',meta:'Test · 1 Oct 2026',value:'76%',badge:h(F.StatusBadge,{status:'needs-review'},'Below')}),
+  h(F.RecordRow,{avatar:'Daniel Mukasa',title:'Daniel Mukasa',meta:'Level 2 · 3 subjects'})
+));
+</script>
+</body>
+</html>

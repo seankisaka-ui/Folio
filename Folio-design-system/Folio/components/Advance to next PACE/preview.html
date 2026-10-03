@@ -1,0 +1,15 @@
+<!-- @dsCard group="Patterns" height=520 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Advance to next PACE — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{height:500}},h(F.ConfirmDialog,{inline:true,icon:'arrow-right',title:'Advance Sarah to PACE 1049?',description:'PACE 1048 will be saved to Sarah\'s permanent record.',summary:[['Completed','Mathematics PACE 1048'],['Test score','92% · Passed'],['Next PACE','1049'],['Starts','3 Oct 2026']],confirmLabel:'Advance to PACE 1049'})));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Content" height=360 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>HistoryEntry — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h(F.Card,{title:'Mathematics history'},h(F.Timeline,null,
+  h(F.HistoryEntry,{kind:'current',title:'PACE 1048',meta:'Started 29 Sep 2026 · 18 of 36 pages',badge:h(F.StatusBadge,{status:'in-progress'})}),
+  h(F.HistoryEntry,{kind:'complete',title:'PACE 1047 · 92%',meta:'Passed 28 Sep 2026 · recorded by Ruth',badge:h(F.AiTag,{edited:true})}),
+  h(F.HistoryEntry,{kind:'warning',title:'PACE 1046 · 76% → 88%',meta:'Repeated, passed on retest 12 Sep 2026'}),
+  h(F.HistoryEntry,{kind:'complete',title:'PACE 1045 · 95%',meta:'Passed 30 Aug 2026'})
+)));
+</script>
+</body>
+</html>

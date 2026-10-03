@@ -1,0 +1,23 @@
+<!-- @dsCard group="Patterns" height=640 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Assign subjects — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var S2=[['Mathematics','1048',true],['English','1046',true],['Word Building','1045',true],['Science','1047',true],['Social Studies','',false]];
+R(h('div',{style:{maxWidth:640}},h(F.Card,{title:'Subjects and starting PACEs',subtitle:'Step 2 of 3 · Sarah'},
+  h('fieldset',{className:'fo-fieldset'},h('legend',null,'Which subjects is Sarah taking?'),
+    S2.map(function(s){return h('div',{key:s[0],className:'fo-row',style:{justifyContent:'space-between',borderBottom:'1px solid var(--border-subtle)',paddingBottom:8}},
+      h(F.Checkbox,{label:s[0],defaultChecked:s[2]}),
+      s[2]?h('div',{style:{width:180}},h(F.Field,{label:'Starting PACE'},h(F.NumberInput,{defaultValue:s[1],size:'sm'}))):h('span',{className:'fo-text-sm fo-text-muted'},'Not taking'))})),
+  h(F.Alert,{tone:'info'},'4 subjects · starting PACEs 1045–1048'),
+  h('div',{className:'fo-card__foot'},h(F.Button,{variant:'ghost',iconLeft:'chevron-left'},'Back'),h(F.Button,{iconLeft:'check'},'Save subjects'))
+)));
+</script>
+</body>
+</html>

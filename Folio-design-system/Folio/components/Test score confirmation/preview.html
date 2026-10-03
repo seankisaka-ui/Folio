@@ -1,0 +1,17 @@
+<!-- @dsCard group="Desktop examples" height=640 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Test score confirmation — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{position:'relative',height:600,background:'var(--bg-canvas)',borderRadius:12,overflow:'hidden'}},
+  h('div',{style:{padding:32,opacity:1}},h('h1',{className:'fo-h fo-h-1'},'Sarah Mukasa')),
+  h('div',{style:{position:'absolute',inset:0}},h(F.ConfirmDialog,{inline:true,title:'Save this test score?',description:'Sarah passed. Saving adds this score to her permanent record.',summary:[['Child','Sarah Mukasa'],['Subject','Mathematics'],['PACE','1048'],['Test score','92% · Passed'],['Pass mark','80%'],['Test date','3 Oct 2026']],confirmLabel:'Save score'}))));
+</script>
+</body>
+</html>

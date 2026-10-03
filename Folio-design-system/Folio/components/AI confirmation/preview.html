@@ -1,0 +1,19 @@
+<!-- @dsCard group="Desktop examples" height=760 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>AI confirmation — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-split',style:{gridTemplateColumns:'minmax(0,1.2fr) minmax(0,1fr)'}},
+  h('div',{className:'fo-stack'},h(F.AssistantComposer,{value:'Sarah scored 92 on math 1048 today',showPrompts:false,onChange:function(){}}),
+    h(F.AiActionPreview,{quote:'Sarah scored 92 on math 1048 today',fields:[{key:'c',label:'Child',value:'Sarah Mukasa'},{key:'s',label:'Subject',value:'Mathematics'},{key:'p',label:'PACE',value:'1048'},{key:'sc',label:'Test score',value:'92',display:'92% · Passed'},{key:'d',label:'Date',value:'3 Oct 2026'}]})),
+  h(F.AiClarification,{quote:'Log 88 for science',question:'Which Science PACE scored 88%?',options:[{value:'g',label:'Grace · PACE 1076'},{value:'d',label:'Daniel · PACE 1019'}]})
+));
+</script>
+</body>
+</html>

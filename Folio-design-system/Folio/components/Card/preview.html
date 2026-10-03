@@ -1,0 +1,18 @@
+<!-- @dsCard group="Content" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Card — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'280px'}},
+  S('Card / Standard', h(F.Card,{title:'This week',subtitle:'28 Sep – 3 Oct',action:h(F.IconButton,{icon:'ellipsis',label:'More actions'}),footer:[h('span',{key:1,className:'fo-text-sm fo-text-muted'},'Updated today'),h(F.Button,{key:2,variant:'link'},'See history')]},h('p',{style:{margin:0}},'Sarah completed 34 pages across 4 subjects and passed one PACE test.'))),
+  S('Card / Muted', h(F.Card,{muted:true,title:'Pass mark'},h('p',{style:{margin:0}},'Your household uses 80% as the PACE test pass mark.')))
+));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Overlays" height=520 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Dialog — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{height:500}},h(F.Dialog,{inline:true,size:'md',title:'Log progress for Sarah',icon:'notebook-pen',onClose:function(){},footer:[h(F.Button,{key:1,variant:'outline'},'Cancel'),h(F.Button,{key:2,iconLeft:'check'},'Save progress')]},
+  h(F.ReadOnlyField,{label:'Subject and PACE',value:'Mathematics · PACE 1048'}),
+  h(F.FieldGroup,{columns:2},h(F.Field,{label:'From page'},h(F.NumberInput,{defaultValue:'18'})),h(F.Field,{label:'To page'},h(F.NumberInput,{defaultValue:'24'}))),
+  h(F.Field,{label:'Date'},h(F.DateInput,{defaultValue:'2026-10-03'}))
+)));
+</script>
+</body>
+</html>

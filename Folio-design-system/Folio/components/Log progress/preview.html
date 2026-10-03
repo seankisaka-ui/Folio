@@ -1,0 +1,21 @@
+<!-- @dsCard group="Patterns" height=560 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Log progress — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{style:{maxWidth:640}},h(F.Card,{title:'Log progress',subtitle:'Sarah · Mathematics · PACE 1048'},
+  h(F.RadioGroup,{legend:'What did Sarah complete?',name:'w',horizontal:true,defaultValue:'pages',options:[{value:'pages',label:'Pages'},{value:'checkup',label:'A Checkup'},{value:'self',label:'Self Test'}]}),
+  h(F.FieldGroup,{columns:2},h(F.Field,{label:'From page'},h(F.NumberInput,{defaultValue:'18'})),h(F.Field,{label:'To page'},h(F.NumberInput,{defaultValue:'24'}))),
+  h(F.ProgressBar,{label:'After saving',value:24,max:36,valueText:'24 of 36 pages'}),
+  h(F.Field,{label:'Date'},h(F.DateInput,{defaultValue:'2026-10-03'})),
+  h('div',{className:'fo-card__foot'},h(F.Button,{variant:'ghost'},'Cancel'),h(F.Button,{iconLeft:'check'},'Save progress'))
+)));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Feedback" height=260 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Toast — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-stack',style:{maxWidth:440}},
+  h(F.Toast,{tone:'success',action:h(F.Button,{variant:'link'},'Undo'),onDismiss:function(){}},'Progress saved for Sarah'),
+  h(F.Toast,{tone:'warning'},'Saved on this device. Will sync when online.'),
+  h(F.Toast,{tone:'error',onDismiss:function(){}},'Couldn\'t save. Try again.')
+));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Content" height=200 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>StatTile — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-grid fo-grid--4'},
+  h(F.StatTile,{label:'PACE tests ready',value:'2',note:'Sarah · Maths, Daniel · English',icon:'clipboard-check'}),
+  h(F.StatTile,{label:'Completed this term',value:'14',note:'PACEs across 3 children',icon:'circle-check'}),
+  h(F.StatTile,{label:'Last progress logged',value:'Today',note:'10:42 AM by Ruth',icon:'clock'})
+));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Patterns" height=380 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Filter records — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-stack'},
+  h('div',{className:'fo-row',style:{alignItems:'flex-end'}},
+    h('div',{style:{flex:'1 1 260px'}},h(F.SearchField,{placeholder:'Search PACE numbers or notes'})),
+    h('div',{style:{width:180}},h(F.Field,{label:'Child'},h(F.Select,{options:['All children','Sarah','Daniel','Grace'],defaultValue:'Sarah'}))),
+    h('div',{style:{width:180}},h(F.Field,{label:'Subject'},h(F.Select,{options:['All subjects','Mathematics','English'],defaultValue:'Mathematics'}))),
+    h('div',{style:{width:180}},h(F.Field,{label:'Term'},h(F.Select,{options:['Term 3 2026','Term 2 2026']}))),
+    h(F.Button,{variant:'ghost',iconLeft:'x'},'Clear filters')),
+  h('p',{role:'status',style:{margin:0,color:'var(--text-secondary)'}},h('strong',null,'6 scores'),' for Sarah · Mathematics · Term 3 2026')
+));
+</script>
+</body>
+</html>

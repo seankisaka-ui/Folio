@@ -1,0 +1,19 @@
+<!-- @dsCard group="Patterns" height=520 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>View all children — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-grid'},
+  h(F.ChildSummaryCard,{name:'Grace Mukasa',meta:'Age 13 · Level 7',paces:[{subject:'Mathematics',pace:1078},{subject:'English',pace:1075},{subject:'Science',pace:1076}],updated:'Updated yesterday',status:h(F.Badge,{tone:'neutral',icon:'clock'},'No log today')}),
+  h(F.ChildSummaryCard,{name:'Sarah Mukasa',meta:'Age 10 · Level 4',paces:[{subject:'Mathematics',pace:1048},{subject:'English',pace:1046},{subject:'Science',pace:1047}],updated:'Progress updated today',status:h(F.Badge,{tone:'warning',icon:'clipboard-check'},'1 test ready')}),
+  h(F.ChildSummaryCard,{name:'Daniel Mukasa',meta:'Age 8 · Level 2',paces:[{subject:'Mathematics',pace:1022},{subject:'English',pace:1021},{subject:'Science',pace:1019}],updated:'Progress updated today',status:h(F.Badge,{tone:'success'},'On track')})
+));
+</script>
+</body>
+</html>

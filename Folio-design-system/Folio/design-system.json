@@ -1,0 +1,378 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-03T10:59:17Z"
+ },
+ "title": "Folio",
+ "namespace": "Folio",
+ "libraries": [
+  {
+   "name": "react",
+   "version": "18.3.1",
+   "global": "React",
+   "file": "components/lib/react.production.min.js"
+  },
+  {
+   "name": "react-dom",
+   "version": "18.3.1",
+   "global": "ReactDOM",
+   "file": "components/lib/react-dom.production.min.js"
+  }
+ ],
+ "sections": {},
+ "groups": [
+  "Icons"
+ ],
+ "assetGroups": {
+  "Icons": {
+   "name": "Icons",
+   "tile": "s",
+   "order": [
+    "arrow-right.svg",
+    "bell.svg",
+    "book-open.svg",
+    "calendar.svg",
+    "check.svg",
+    "chevron-down.svg",
+    "chevron-left.svg",
+    "chevron-right.svg",
+    "chevrons-left.svg",
+    "circle-alert.svg",
+    "circle-check.svg",
+    "circle-help.svg",
+    "circle-x.svg",
+    "clipboard-check.svg",
+    "clock.svg",
+    "download.svg",
+    "ellipsis.svg",
+    "file-text.svg",
+    "funnel.svg",
+    "graduation-cap.svg",
+    "history.svg",
+    "house.svg",
+    "info.svg",
+    "layers.svg",
+    "list-checks.svg",
+    "loader-circle.svg",
+    "lock.svg",
+    "log-out.svg",
+    "menu.svg",
+    "minus.svg",
+    "notebook-pen.svg",
+    "pencil.svg",
+    "plus.svg",
+    "printer.svg",
+    "refresh-cw.svg",
+    "search.svg",
+    "send.svg",
+    "settings.svg",
+    "sparkles.svg",
+    "trash-2.svg",
+    "triangle-alert.svg",
+    "undo-2.svg",
+    "user-plus.svg",
+    "user.svg",
+    "users.svg",
+    "wifi-off.svg",
+    "x.svg"
+   ],
+   "files": {
+    "arrow-right.svg": {
+     "name": "arrow-right.svg",
+     "blob": "e227259da210cd89d959b0dbd654e230",
+     "size": 227,
+     "type": "image/svg+xml"
+    },
+    "bell.svg": {
+     "name": "bell.svg",
+     "blob": "4062e347e22f51333601a8cf1cc76bb4",
+     "size": 359,
+     "type": "image/svg+xml"
+    },
+    "book-open.svg": {
+     "name": "book-open.svg",
+     "blob": "b5699e717a1c39ad4c6f3c186c3936ba",
+     "size": 353,
+     "type": "image/svg+xml"
+    },
+    "calendar.svg": {
+     "name": "calendar.svg",
+     "blob": "44936e8e316643f7cb5e2aa4facb79e9",
+     "size": 287,
+     "type": "image/svg+xml"
+    },
+    "check.svg": {
+     "name": "check.svg",
+     "blob": "b33b1f725f8a98498a1bb3b87e9fb26f",
+     "size": 209,
+     "type": "image/svg+xml"
+    },
+    "chevron-down.svg": {
+     "name": "chevron-down.svg",
+     "blob": "e9ece5060d748b5ede714af66623e1c8",
+     "size": 206,
+     "type": "image/svg+xml"
+    },
+    "chevron-left.svg": {
+     "name": "chevron-left.svg",
+     "blob": "ca91ac8c6a15432dc2691bedc0230dcf",
+     "size": 208,
+     "type": "image/svg+xml"
+    },
+    "chevron-right.svg": {
+     "name": "chevron-right.svg",
+     "blob": "4524c3ae23ec3ca7384a560e5b083f79",
+     "size": 207,
+     "type": "image/svg+xml"
+    },
+    "chevrons-left.svg": {
+     "name": "chevrons-left.svg",
+     "blob": "e41c66969221090650439186a6e4f3ee",
+     "size": 234,
+     "type": "image/svg+xml"
+    },
+    "circle-alert.svg": {
+     "name": "circle-alert.svg",
+     "blob": "c2a7245929c08e8d1ec7de1e223aa1a3",
+     "size": 294,
+     "type": "image/svg+xml"
+    },
+    "circle-check.svg": {
+     "name": "circle-check.svg",
+     "blob": "13ce51df3bf18d7571a9cf730ebbf411",
+     "size": 244,
+     "type": "image/svg+xml"
+    },
+    "circle-help.svg": {
+     "name": "circle-help.svg",
+     "blob": "2e1e90303e603020415c1fc3ab5ad93d",
+     "size": 284,
+     "type": "image/svg+xml"
+    },
+    "circle-x.svg": {
+     "name": "circle-x.svg",
+     "blob": "9c34756c5edb4752a768fb6060107cfb",
+     "size": 255,
+     "type": "image/svg+xml"
+    },
+    "clipboard-check.svg": {
+     "name": "clipboard-check.svg",
+     "blob": "736f7fb3d4582ced8c7c2e95c98629ea",
+     "size": 345,
+     "type": "image/svg+xml"
+    },
+    "clock.svg": {
+     "name": "clock.svg",
+     "blob": "b767bc541d96c034237363c2539f335f",
+     "size": 237,
+     "type": "image/svg+xml"
+    },
+    "download.svg": {
+     "name": "download.svg",
+     "blob": "fc4a35814fcdb042450c7e13f1f648c9",
+     "size": 280,
+     "type": "image/svg+xml"
+    },
+    "ellipsis.svg": {
+     "name": "ellipsis.svg",
+     "blob": "2edebb26e0b22db02eb817ab41dbf3ed",
+     "size": 274,
+     "type": "image/svg+xml"
+    },
+    "file-text.svg": {
+     "name": "file-text.svg",
+     "blob": "1c77cd704688af973014c72625a21001",
+     "size": 398,
+     "type": "image/svg+xml"
+    },
+    "funnel.svg": {
+     "name": "funnel.svg",
+     "blob": "26003057bbda65e74e5c171dde4f69e2",
+     "size": 340,
+     "type": "image/svg+xml"
+    },
+    "graduation-cap.svg": {
+     "name": "graduation-cap.svg",
+     "blob": "b99daed0df3a0bf1e4729d6fadf127f9",
+     "size": 374,
+     "type": "image/svg+xml"
+    },
+    "history.svg": {
+     "name": "history.svg",
+     "blob": "0b94274de1007cdad40137c4188e5a73",
+     "size": 286,
+     "type": "image/svg+xml"
+    },
+    "house.svg": {
+     "name": "house.svg",
+     "blob": "56dc8ef28b78813c73d20e2e0ded965d",
+     "size": 349,
+     "type": "image/svg+xml"
+    },
+    "info.svg": {
+     "name": "info.svg",
+     "blob": "c36f6c5b5ca267fb7086974eaab58371",
+     "size": 256,
+     "type": "image/svg+xml"
+    },
+    "layers.svg": {
+     "name": "layers.svg",
+     "blob": "ea64411f0e98eaa44153691500ce4775",
+     "size": 472,
+     "type": "image/svg+xml"
+    },
+    "list-checks.svg": {
+     "name": "list-checks.svg",
+     "blob": "af481ee62fe01ef335b26f8b2a6341a0",
+     "size": 290,
+     "type": "image/svg+xml"
+    },
+    "loader-circle.svg": {
+     "name": "loader-circle.svg",
+     "blob": "ab1b4dfc7901b402876e0cf689b5c8cd",
+     "size": 221,
+     "type": "image/svg+xml"
+    },
+    "lock.svg": {
+     "name": "lock.svg",
+     "blob": "4b2d8a9232bd8a55fb375abfd857ea30",
+     "size": 275,
+     "type": "image/svg+xml"
+    },
+    "log-out.svg": {
+     "name": "log-out.svg",
+     "blob": "dae7c0a945240541e51520920fc0c041",
+     "size": 279,
+     "type": "image/svg+xml"
+    },
+    "menu.svg": {
+     "name": "menu.svg",
+     "blob": "3a26add399a32493fb9fa67fb39e005d",
+     "size": 241,
+     "type": "image/svg+xml"
+    },
+    "minus.svg": {
+     "name": "minus.svg",
+     "blob": "6f3be5328f4eba4551d2ed028d561bf3",
+     "size": 202,
+     "type": "image/svg+xml"
+    },
+    "notebook-pen.svg": {
+     "name": "notebook-pen.svg",
+     "blob": "5aa0d5ec62ba4e14fb7c32b9dc6f945b",
+     "size": 469,
+     "type": "image/svg+xml"
+    },
+    "pencil.svg": {
+     "name": "pencil.svg",
+     "blob": "5ee02b58e66d7802622c835365befcf0",
+     "size": 343,
+     "type": "image/svg+xml"
+    },
+    "plus.svg": {
+     "name": "plus.svg",
+     "blob": "695d5cce620e17ac7ed33cd3340fb9b3",
+     "size": 222,
+     "type": "image/svg+xml"
+    },
+    "printer.svg": {
+     "name": "printer.svg",
+     "blob": "05e50a9bc07e8523194c352fde9365cf",
+     "size": 368,
+     "type": "image/svg+xml"
+    },
+    "refresh-cw.svg": {
+     "name": "refresh-cw.svg",
+     "blob": "92d29753c517473049fb68830e4a4654",
+     "size": 350,
+     "type": "image/svg+xml"
+    },
+    "search.svg": {
+     "name": "search.svg",
+     "blob": "a86e0391c223cb75ff822f975adf98ed",
+     "size": 241,
+     "type": "image/svg+xml"
+    },
+    "send.svg": {
+     "name": "send.svg",
+     "blob": "88fd6371c34692bb926f561da3fa982d",
+     "size": 359,
+     "type": "image/svg+xml"
+    },
+    "settings.svg": {
+     "name": "settings.svg",
+     "blob": "43b19e8db06709ae1420114345ab1f41",
+     "size": 552,
+     "type": "image/svg+xml"
+    },
+    "sparkles.svg": {
+     "name": "sparkles.svg",
+     "blob": "26cdff0f6d68d2d407e9e82564e96dd6",
+     "size": 525,
+     "type": "image/svg+xml"
+    },
+    "trash-2.svg": {
+     "name": "trash-2.svg",
+     "blob": "e8b966bf691aa1ae884800398d38554c",
+     "size": 343,
+     "type": "image/svg+xml"
+    },
+    "triangle-alert.svg": {
+     "name": "triangle-alert.svg",
+     "blob": "59c148e7c421c1948b4e3d964f5636e1",
+     "size": 307,
+     "type": "image/svg+xml"
+    },
+    "undo-2.svg": {
+     "name": "undo-2.svg",
+     "blob": "9e26bba01f960535156bd3c81fc28ba2",
+     "size": 275,
+     "type": "image/svg+xml"
+    },
+    "user-plus.svg": {
+     "name": "user-plus.svg",
+     "blob": "359ddd42438b3fe1dfb59e255d6f1ede",
+     "size": 341,
+     "type": "image/svg+xml"
+    },
+    "user.svg": {
+     "name": "user.svg",
+     "blob": "7ba15ab2cbce3468ada0168aa3673823",
+     "size": 265,
+     "type": "image/svg+xml"
+    },
+    "users.svg": {
+     "name": "users.svg",
+     "blob": "4d349755c0da1a9b2cca66be6c54bdb2",
+     "size": 341,
+     "type": "image/svg+xml"
+    },
+    "wifi-off.svg": {
+     "name": "wifi-off.svg",
+     "blob": "088332c321b2f8bfd2ebe87ea84b50b5",
+     "size": 440,
+     "type": "image/svg+xml"
+    },
+    "x.svg": {
+     "name": "x.svg",
+     "blob": "9b6cd115a8bfcaa40aec6d334b9f0d64",
+     "size": 226,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Gabriel",
+  "at": "2026-10-03T10:59:17Z",
+  "via": "Cowork",
+  "note": "Initial Folio design system: tokens, fonts, 63 components, patterns and examples"
+ }
+}

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Patterns" height=640 page -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Record a test score — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+R(h('div',{className:'fo-demo__grid',style:{'--_min':'320px'}},
+  S('Step 1 · Enter score',h(F.Card,{title:'Record test score',subtitle:'Sarah · Mathematics · PACE 1048'},
+    h(F.Field,{label:'PACE test score',success:'Passed — pass mark 80%'},h(F.ScoreInput,{defaultValue:'92'})),
+    h(F.Field,{label:'Test date'},h(F.DateInput,{defaultValue:'2026-10-03'})),
+    h('div',{className:'fo-card__foot'},h(F.Button,{variant:'ghost'},'Cancel'),h(F.Button,null,'Review and save')))),
+  S('Below pass mark',h(F.Card,{title:'Record test score',subtitle:'Sarah · English · PACE 1046'},
+    h(F.Field,{label:'PACE test score',warning:'Below the 80% pass mark'},h(F.ScoreInput,{defaultValue:'76'})),
+    h(F.RadioGroup,{legend:'What next?',name:'nx',card:true,defaultValue:'r',options:[{value:'r',label:'Repeat PACE 1046'},{value:'t',label:'Retest after review'}]})))
+));
+</script>
+</body>
+</html>

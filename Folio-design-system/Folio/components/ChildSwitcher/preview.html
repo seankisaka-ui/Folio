@@ -1,0 +1,19 @@
+<!-- @dsCard group="Navigation" height=360 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ChildSwitcher — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+var F=window.Folio,h=React.createElement;
+function S(n,e,w){return h('div',{className:'fo-demo__cell',style:w?{gridColumn:'span '+w}:null},h('span',{className:'fo-demo__name'},n),e)}
+function G(t,min){var c=[].slice.call(arguments,2);return h('section',{className:'fo-stack'},t&&h('h4',{className:'fo-demo__h'},t),h('div',{className:'fo-demo__grid',style:{'--_min':(min||200)+'px'}},c))}
+function R(el){ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'fo fo-demo'},el))}
+var kids=[{id:'g',name:'Grace Mukasa',meta:'Age 13 · Level 7'},{id:'s',name:'Sarah Mukasa',meta:'Age 10 · Level 4'},{id:'d',name:'Daniel Mukasa',meta:'Age 8 · Level 2'}];
+R(h('div',{style:{display:'flex',gap:32,flexWrap:'wrap',alignItems:'flex-start',minHeight:300}},
+  S('ChildSwitcher / Closed', h(F.ChildSwitcher,{options:kids,value:'s'})),
+  S('ChildSwitcher / Open', h(F.ChildSwitcher,{options:kids,value:'s',open:true}))
+));
+</script>
+</body>
+</html>
